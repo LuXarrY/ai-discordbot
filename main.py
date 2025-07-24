@@ -6,10 +6,8 @@ import google.generativeai as genai
 import time
 import asyncio
 
-# Load environment variables
 load_dotenv(".env")
 
-# Configure Gemini AI
 genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
 chat_model = genai.GenerativeModel('models/gemini-2.0-flash')
 
@@ -25,7 +23,7 @@ class LuXBot(commands.Bot):
             command_prefix="!",
             intents=intents,
             help_command=None,
-            application_id=os.getenv('BOTUN_IDSİ')
+            application_id=os.getenv('APPLICATION_ID')
         )
 
         self.last_message_time = {}
